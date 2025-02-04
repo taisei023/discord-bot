@@ -21,6 +21,12 @@ TRIGGER_WORDS = {
     "ばいばい": "またねー！元気でねー！"
 }
 
+# asyncを使うことにより非同期処理ができる→他の処理と並行して動ける
+# また、async関数の中ではawaitを使える
+# awaitを使うことによって時間がかかる処理が終わるまで待てる
+# この場合、メッセージを送る処理は時間がかかるのでそれが終わるまで待つことができる
+
+# @bot.eventはDiscord APIのメッセージ受信イベントに対応する関数であることがわかる
 @bot.event
 async def on_ready(): # on_ready()はBotがログインしたときに1回だけ呼ばれる
     print(f"ログインしました: {bot.user}")# bot.userはbotの名前
