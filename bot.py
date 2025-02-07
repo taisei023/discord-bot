@@ -12,15 +12,15 @@ class MyBot(discord.Client):
         super().__init__(intents=intents)
         self.tree = discord.app_commands.CommandTree(self)
 
-    async def setup_hook(self):
-        """Bot の起動時にコマンドをセットアップ"""
+    async def setup_hook(self): # botの起動時にコマンドをセットアップ
         await setup_commands(self)  # コマンドフォルダから全部読み込む
+        await bot.tree.sync()
 
 bot = MyBot()
 
 @bot.event
 async def on_ready():
-    print(f"ログインしました: {bot.user}")
+    print(f"ログインしました: {bot.user}") # fを記述することによって文字列の中に変数の値を埋め込むことができる
 
 @bot.event
 async def on_message(message):
