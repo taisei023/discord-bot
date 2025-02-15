@@ -1,0 +1,5 @@
+from message_listener import handle_message  # メッセージ処理
+
+@bot.event
+async def on_message(message):
+    await handle_message(bot, message)  # メッセージ応答を処理
