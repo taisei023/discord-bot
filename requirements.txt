@@ -1,3 +1,4 @@
 discord.py
 gtts
 FFmpegPCMAudio
+python-dotenv
